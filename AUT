@@ -1,5 +1,5 @@
 repeat
-wait()
+    wait()
 until game:IsLoaded()
-setclipboard("discord.gg/bFF2pqSxA9)
-game.Players.LocalPlayer:Kick("Join the discord (discord.gg/bFF2pqSxA9)
+game.Players.LocalPlayer:Kick("Join the discord server (https://discord.gg/qBFpGZeSSe)")
+setclipboard("https://discord.gg/qBFpGZeSSe")
