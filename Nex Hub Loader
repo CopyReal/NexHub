@@ -1,1 +1,3 @@
-
+setclipboard("https://pastebin.com/PprBvGRS")
+wait(0.3)
+game.Players.LocalPlayer:kick("Loadstring has been changed the Loadstring & Discord (pastebin) has been copied to your clipboard. Discord Server: discord.gg/bFF2pqSxA9")
