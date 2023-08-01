@@ -3132,7 +3132,8 @@ function DiscordLib:Window(text)
 			            {BackgroundColor3 = Color3.fromRGB(114, 137, 228)}
 			        ):Play()
 			
-			        TextBox:GetPropertyChangedSignal("Text"):Connect(onTextChanged)
+			        -- Connect the onTextChanged function to the Changed event
+			        TextBox.Changed:Connect(onTextChanged)
 			    end)
 			
 			    TextBox.FocusLost:Connect(function(ep)
@@ -3142,10 +3143,12 @@ function DiscordLib:Window(text)
 			            {BackgroundColor3 = Color3.fromRGB(37, 40, 43)}
 			        ):Play()
 			
-			        if TextBox.Event then
-			            TextBox.Event:Disconnect()
+			        -- Disconnect the onTextChanged function from the Changed event
+			        if TextBox.Changed.Connected then
+			            TextBox.Changed:Disconnect()
 			        end
 			
+			        -- Perform the text check even when focus is lost (e.g., by pressing Enter)
 			        if #TextBox.Text > 0 then
 			            pcall(callback, TextBox.Text)
 			            if disapper then
